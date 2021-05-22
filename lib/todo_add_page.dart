@@ -42,7 +42,10 @@ class _TodoAddPageState extends State<TodoAddPage> {
               width: double.infinity,
               // リスト追加ボタン
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // "pop"の引数から前の画面にデータを渡す
+                  Navigator.of(context).pop(_text);
+                },
                 child: Text('リスト追加', style: TextStyle(color: Colors.white)),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black
