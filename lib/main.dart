@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/todo_add_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,8 +24,6 @@ class TodoListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // *** 追加する部分 ***
-      // AppBarを表示し、タイトルも設定
       appBar: AppBar(
         title: Text('リスト一覧'),
       ),
@@ -54,7 +53,12 @@ class TodoListPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // --- 省略 ---
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => TodoAddPage(),
+            ),
+          );
         },
         child: Icon(Icons.add),
       ),
