@@ -34,31 +34,19 @@ class TodoListPage extends StatelessWidget {
               title: Text('あいうえお'),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text('あいうえお'),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: Text('あいうえお'),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: Text('あいうえお'),
-            ),
-          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => TodoAddPage(),
-            ),
+        onPressed: () async {
+          //リスト追加画面から渡される値を受け取る
+          final newListText = await Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) {
+              return TodoListPage();
+            }),
           );
+          if (newListText != null){
+
+          }
         },
         child: Icon(Icons.add),
       ),
